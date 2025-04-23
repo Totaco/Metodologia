@@ -11,6 +11,10 @@ namespace Tp
 			this.lista = new List<Comparable>();
 		}
 		
+		public List<Comparable> GetLista{
+			get{return lista;}
+		}
+		
 		public int Cuantos(){
 			return lista.Count;
 		}

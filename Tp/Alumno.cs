@@ -2,10 +2,7 @@
 
 namespace Tp
 {
-	/// <summary>
-	/// Description of Alumno.
-	/// </summary>
-	public class Alumno : Persona
+	public class Alumno : Persona, IObservadorDeProfesores
 	{
 		private int legajo;
 		private double promedio;
@@ -48,6 +45,32 @@ namespace Tp
 		
 		public EstrategiaComparacion GetEstrategia{
 			get{return estrategia;}
+		}
+		
+		public void prestarAtencion(){
+			Console.WriteLine("Prestando atención");
+		}
+		
+		public void distraerse(){
+			GeneradorDeDatosAleatorios generador = new GeneradorDeDatosAleatorios();
+			int indice = generador.NumeroAleatorio(2);
+			switch(indice){
+				case 0:
+					Console.WriteLine("Mirando el celular"); break;
+				case 1:
+					Console.WriteLine("Dibujando en el margen de la carpeta"); break;
+				case 2:
+					Console.WriteLine("Tirando aviones de papel"); break;
+			}
+		}
+		
+		public void actualizar(string accion){
+			switch (accion){
+				case "hablando":
+					prestarAtencion(); break;
+				case "escribiendo":
+					distraerse(); break;
+			}
 		}
 	}
 }

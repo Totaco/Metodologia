@@ -73,9 +73,18 @@
     <Compile Include="Comparable.cs" />
     <Compile Include="Conjunto.cs" />
     <Compile Include="EstrategiaComparacion.cs" />
+    <Compile Include="FabricaDeAlumnos.cs" />
+    <Compile Include="FabricaDeComparables.cs" />
+    <Compile Include="FabricaDeNumeros.cs" />
+    <Compile Include="FabricaDeProfesores.cs" />
+    <Compile Include="GeneradorDeDatosAleatorios.cs" />
+    <Compile Include="IObservado.cs" />
+    <Compile Include="IObservador.cs" />
+    <Compile Include="IObservadorDeProfesores.cs" />
     <Compile Include="Iterable.cs" />
     <Compile Include="Iterador.cs" />
     <Compile Include="IteradorDeLista.cs" />
+    <Compile Include="LectorDeDatos.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
@@ -83,6 +92,7 @@
     <Compile Include="PorLegajo.cs" />
     <Compile Include="PorNombre.cs" />
     <Compile Include="PorPromedio.cs" />
+    <Compile Include="Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

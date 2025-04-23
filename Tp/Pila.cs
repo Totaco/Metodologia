@@ -4,7 +4,7 @@ namespace Tp
 {
 	public class Pila : Coleccionable, Iterable 
 	{
-		List<Comparable> lista;
+		private List<Comparable> lista;
 		
 		public Pila()
 		{
@@ -19,6 +19,10 @@ namespace Tp
 			Comparable aux = lista[lista.Count-1];
 			lista.RemoveAt(lista.Count-1);
 			return aux;	
+		}
+		
+		public List<Comparable> GetLista{
+			get{return lista;}
 		}
 		
 		public int Cuantos(){

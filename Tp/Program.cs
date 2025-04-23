@@ -10,90 +10,46 @@ namespace Tp
         
         static void Main(string[] args)
         {
-            /*Ejercicio 2
-            Pila pila = new Pila();
-            Cola cola = new Cola();
-            ColeccionMultiple multiple = new ColeccionMultiple(pila, cola);
-            LlenarAlumnos(pila);
-            LlenarAlumnos(cola);
-            Informar(multiple);*/
+            /*Ejercicio 9
+            Pila p = new Pila();
+            Llenar(p,2);
+            Informar(p,2);*/
             
-            /*Ejercicio 7
-            Pila pila = new Pila();
-            Cola cola = new Cola();
-            Conjunto conjunto = new Conjunto();
-            LlenarAlumnos(pila);
-            LlenarAlumnos(cola);
-            LlenarAlumnos(conjunto);
-            ImprimirElementos(pila);
-            Console.WriteLine("");
-            ImprimirElementos(cola);
-            Console.WriteLine("");
-            ImprimirElementos(conjunto);*/
-            
-            //Ejercicio 9
-            Pila pila = new Pila();
-            LlenarAlumnos(pila);
-            Console.WriteLine("Coleccionable comparado por dni");
-            Informar(pila);
-            Console.WriteLine("");
-            CambiarEstrategia(pila, new PorNombre());
-            Console.WriteLine("Coleccionable comparado por nombre");
-            Informar(pila);
-            Console.WriteLine("");
-            CambiarEstrategia(pila, new PorLegajo());
-            Console.WriteLine("Coleccionable comparado por legajo");
-            Informar(pila);
-            Console.WriteLine("");
-            CambiarEstrategia(pila, new PorPromedio());
-            Console.WriteLine("Coleccionable comparado por promedio");
-            Informar(pila);
+            Profesor profesor = (Profesor)FabricaDeComparables.CrearAleatorio(3);
+            for (int i = 0; i < 20; i++){
+            	IObservador alumno = (IObservador)FabricaDeComparables.CrearAleatorio(2);
+            	profesor.agregarObservador(alumno);
+            }
+            dictadoDeClases(profesor);
 
             Console.ReadKey(true);
         }
-        static void Llenar(Coleccionable c)
+        static void Llenar(Coleccionable c, int opcion)
         {
             for (int i = 0; i < 20; i++)
             {
-                c.Agregar(new Numero(GenerarNumRandom(1, 100)));
+            	Comparable com = FabricaDeComparables.CrearAleatorio(opcion);
+                c.Agregar(com);
             }
         }
+        
         static int GenerarNumRandom(int min, int max){
         	return random.Next(min, max + 1);
         }
-        static void Informar(Coleccionable c){
+        
+        static void Informar(Coleccionable c, int opcion){
         	
         	Console.WriteLine("Cantidad de elementos: " + c.Cuantos());
         	Console.WriteLine("Minimo: " + c.Minimo().ToString());
         	Console.WriteLine("Maximo: " + c.Maximo().ToString());
-
-        	Console.Write("Ingrese un valor para ver si esta en la colección(Si es por nombre ingrese misma cantidad de letras): ");
-        	int opt = int.Parse(Console.ReadLine());
-        	Comparable com;
-        	if (c.Minimo() is Alumno){com = new Alumno(opt.ToString(), opt, opt, opt, ((Alumno)c.Minimo()).GetEstrategia);}
-        	else
-        		if (c.Minimo() is Numero){com = new Numero(opt);}
-        	else
-        	{
-        		Console.WriteLine("Tipo de dato no identificado");
-        		return;
-        	}
-
+        	Comparable com = FabricaDeComparables.CrearPorTeclado(opcion);
         	if(c.Contiene(com)){
         		Console.WriteLine("El elemento leído está en la colección");
         	}
         	else
         		Console.WriteLine("El elemento leído no está en la colección");
         }
-
-        static void LlenarAlumnos(Coleccionable c)
-        {
-            for (int i = 0; i < 20; i++)
-            {
-            	Comparable nuevoAlumno = new Alumno(GenerarNombreRandom(),GenerarNumRandom(10000000, 99999999),GenerarNumRandom(10000, 99999), GenerarNumRandom(1, 10),new PorDni());
-                c.Agregar(nuevoAlumno);
-            }
-        }
+        
         static string GenerarNombreRandom()
         {
             List<string> nombres = new List<string>
@@ -120,6 +76,15 @@ namespace Tp
         	while(!ite.Fin()){
         		((Alumno)ite.Actual()).SetEstrategia(es);
         		ite.Siguiente();
+        	}
+        }
+        
+        public static void dictadoDeClases(Profesor p){
+        	for (int i = 0; i < 5; i++){
+        		p.hablarALaClase();
+        		Console.WriteLine("");
+        		p.escribirEnElPizarron();
+        		Console.WriteLine("");
         	}
         }
     }

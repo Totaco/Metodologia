@@ -5,6 +5,7 @@ namespace Tp
 	public class Cola : Coleccionable, Iterable
 	{
 		private List<Comparable> lista;
+		
 		public Cola()
 		{
 			this.lista = new List<Comparable>();
@@ -17,6 +18,10 @@ namespace Tp
 			Comparable aux = lista[0];
 			lista.RemoveAt(0);
 			return aux;	
+		}
+		
+		public List<Comparable> GetLista{
+			get{return lista;}
 		}
 		
 		public int Cuantos(){
