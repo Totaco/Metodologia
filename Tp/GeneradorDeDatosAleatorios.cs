@@ -5,7 +5,7 @@ namespace Tp
 {
 	public class GeneradorDeDatosAleatorios
 	{
-		private Random aleatorio = new Random();
+		private static Random aleatorio = new Random();
 		private const string caracteres = "abcdefghijklmnopqrstuvwxyz";
 		
 		public GeneradorDeDatosAleatorios()

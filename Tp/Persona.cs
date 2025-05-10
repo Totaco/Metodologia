@@ -13,18 +13,18 @@ namespace Tp
 			dni=d;
 		}
 		
-		public string GetNombre{
-			get{return nombre;}
+		public string GetNombre(){
+			return nombre;
 		}
 		
-		public int GetDni{
-			get{return dni;}
+		public int GetDni(){
+			return dni;
 		}
 		
-		public abstract bool sosIgual(Comparable c);
+		public abstract bool SosIgual(Comparable c);
 		
-		public abstract bool sosMenor(Comparable c);
+		public abstract bool SosMenor(Comparable c);
 		
-		public abstract bool sosMayor(Comparable c);
+		public abstract bool SosMayor(Comparable c);
 	}
 }

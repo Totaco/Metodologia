@@ -23,25 +23,25 @@ namespace Tp
 			notificar("escribiendo");
 		}
 		
-		public int GetAntiguedad{
-			get{return antiguedad;}
+		public int GetAntiguedad(){
+			return antiguedad;
 		}
 		
-		public override bool sosIgual(Comparable c){
-			return ((Profesor)c).GetAntiguedad == GetAntiguedad;
+		public override bool SosIgual(Comparable c){
+			return ((Profesor)c).GetAntiguedad() == GetAntiguedad();
 		}
 		
-		public override bool sosMenor(Comparable c){
-			return ((Profesor)c).GetAntiguedad > GetAntiguedad;
+		public override bool SosMenor(Comparable c){
+			return ((Profesor)c).GetAntiguedad() > GetAntiguedad();
 		}
 		
-		public override bool sosMayor(Comparable c){
-			return ((Profesor)c).GetAntiguedad < GetAntiguedad;
+		public override bool SosMayor(Comparable c){
+			return ((Profesor)c).GetAntiguedad() < GetAntiguedad();
 		}
 		
 		public override string ToString()
 		{
-			return "Profesor " + GetNombre + ", Dni " + GetDni + ", Años de antiguedad " + GetAntiguedad;
+			return "Profesor " + GetNombre() + ", Dni " + GetDni() + ", Años de antiguedad " + GetAntiguedad();
 		}
 		
 		public void agregarObservador(IObservador o){
@@ -50,7 +50,7 @@ namespace Tp
 		
 		public void notificar(string accion){
 			foreach(IObservadorDeProfesores o in observadores)
-				o.actualizar(accion);
+				o.Actualizar(accion);
 		}
 	}
 }

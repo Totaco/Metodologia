@@ -2,40 +2,50 @@
 
 namespace Tp
 {
-	public class Alumno : Persona, IObservadorDeProfesores
+	public class Alumno : Persona, IAlumno
 	{
 		private int legajo;
 		private double promedio;
+		private int calificacion;
 		private EstrategiaComparacion estrategia;
 		
-		public Alumno(string n, int d, int l, double p, EstrategiaComparacion e) : base(n,d)
+		public Alumno(string n, int d, int l, double p, int c, EstrategiaComparacion e) : base(n,d)
 		{
 			legajo=l;
 			promedio=p;
+			calificacion=c;
 			estrategia=e;
 		}
 		
-		public int GetLegajo{
-			get{return legajo;}
+		public void SetCalificacion(int c){
+			calificacion = c;
 		}
 		
-		public double GetPromedio{
-			get{return promedio;}
+		public int GetLegajo(){
+			return legajo;
+		}
+		
+		public double GetPromedio(){
+			return promedio;
+		}
+		
+		public int GetCalificacion(){
+			return calificacion;
 		}
 		
 		public override string ToString(){
-			return "Alumno " + GetNombre + ", Dni " + GetDni + ", Legajo " + GetLegajo + ", Promedio " + GetPromedio;
+			return "Alumno " + GetNombre() + ", Dni " + GetDni() + ", Legajo " + GetLegajo() + ", Promedio " + GetPromedio();
 		}
 		
-		public override bool sosIgual(Comparable c){
+		public override bool SosIgual(Comparable c){
 			return estrategia.Igual(this,c);
 		}
 		
-		public override bool sosMenor(Comparable c){
+		public override bool SosMenor(Comparable c){
 			return estrategia.Menor(this,c);
 		}
 		
-		public override bool sosMayor(Comparable c){
+		public override bool SosMayor(Comparable c){
 			return estrategia.Mayor(this,c);
 		}
 		
@@ -43,15 +53,15 @@ namespace Tp
 			estrategia = es;
 		}
 		
-		public EstrategiaComparacion GetEstrategia{
-			get{return estrategia;}
+		public EstrategiaComparacion GetEstrategia(){
+			return estrategia;
 		}
 		
-		public void prestarAtencion(){
+		public void PrestarAtencion(){
 			Console.WriteLine("Prestando atención");
 		}
 		
-		public void distraerse(){
+		public void Distraerse(){
 			GeneradorDeDatosAleatorios generador = new GeneradorDeDatosAleatorios();
 			int indice = generador.NumeroAleatorio(2);
 			switch(indice){
@@ -64,13 +74,22 @@ namespace Tp
 			}
 		}
 		
-		public void actualizar(string accion){
+		public void Actualizar(string accion){
 			switch (accion){
 				case "hablando":
-					prestarAtencion(); break;
+					PrestarAtencion(); break;
 				case "escribiendo":
-					distraerse(); break;
+					Distraerse(); break;
 			}
+		}
+		
+		public virtual int ResponderPregunta(int pregunta){
+			GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
+			return gen.NumeroAleatorio(2) + 1;
+		}
+		
+		public string MostrarCalificacion(){
+			return this.GetNombre() + " " + GetCalificacion();
 		}
 	}
 }

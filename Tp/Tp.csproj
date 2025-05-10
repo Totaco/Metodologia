@@ -67,17 +67,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoAdapter.cs" />
+    <Compile Include="AlumnoMuyEstudioso.cs" />
     <Compile Include="Cola.cs" />
     <Compile Include="Coleccionable.cs" />
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="Conjunto.cs" />
+    <Compile Include="DecoradorCalificacion.cs" />
+    <Compile Include="DecoradorEstado.cs" />
+    <Compile Include="DecoradorLegajo.cs" />
+    <Compile Include="DecoradorLetras.cs" />
+    <Compile Include="DecoradorRecuadro.cs" />
     <Compile Include="EstrategiaComparacion.cs" />
     <Compile Include="FabricaDeAlumnos.cs" />
+    <Compile Include="FabricaDeAlumnosMuyEstudiosos.cs" />
     <Compile Include="FabricaDeComparables.cs" />
     <Compile Include="FabricaDeNumeros.cs" />
     <Compile Include="FabricaDeProfesores.cs" />
     <Compile Include="GeneradorDeDatosAleatorios.cs" />
+    <Compile Include="IAlumno.cs" />
     <Compile Include="IObservado.cs" />
     <Compile Include="IObservador.cs" />
     <Compile Include="IObservadorDeProfesores.cs" />
@@ -85,6 +94,7 @@
     <Compile Include="Iterador.cs" />
     <Compile Include="IteradorDeLista.cs" />
     <Compile Include="LectorDeDatos.cs" />
+    <Compile Include="MDPI.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
@@ -95,6 +105,7 @@
     <Compile Include="Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

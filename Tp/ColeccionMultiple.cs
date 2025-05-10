@@ -20,14 +20,14 @@ namespace Tp
 		public Comparable Minimo(){
 			Comparable min = pila.Minimo();
 			Comparable min2 = cola.Minimo();
-			if(min.sosMenor(min2))
+			if(min.SosMenor(min2))
 				return min;
 			return min2;
 		}
 		public Comparable Maximo(){
 			Comparable max = pila.Maximo();
 			Comparable max2 = cola.Maximo();
-			if(max.sosMayor(max2))
+			if(max.SosMayor(max2))
 				return max;
 			return max2;	
 		}

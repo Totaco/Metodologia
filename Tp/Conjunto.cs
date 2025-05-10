@@ -22,7 +22,7 @@ namespace Tp
 		public Comparable Minimo(){
 			Comparable min = lista[0];
 			foreach(Comparable c in lista){
-				if(c.sosMenor(min))
+				if(c.SosMenor(min))
 					min=c;
 			}
 			return min;
@@ -31,7 +31,7 @@ namespace Tp
 		public Comparable Maximo(){
 			Comparable max = lista[0];
 			foreach(Comparable c in lista){
-				if(c.sosMayor(max))
+				if(c.SosMayor(max))
 					max=c;
 			}
 			return max;
@@ -48,7 +48,7 @@ namespace Tp
 		
 		private bool Pertenece(Comparable c){
 			foreach(Comparable com in lista){
-				if(com.sosIgual(c))
+				if(com.SosIgual(c))
 					return true;
 			}
 			return false;

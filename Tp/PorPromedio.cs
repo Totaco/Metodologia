@@ -11,15 +11,15 @@ namespace Tp
         //Metodos de Comparable - comparar personas
         public bool Igual(Comparable c, Comparable c2)
         {
-        	return ((Alumno)c).GetPromedio == ((Alumno)c2).GetPromedio;
+        	return ((IAlumno)c).GetPromedio() == ((IAlumno)c2).GetPromedio();
         }
         public  bool Menor(Comparable c, Comparable c2)
         {
-            return ((Alumno)c).GetPromedio < ((Alumno)c2).GetPromedio;
+            return ((IAlumno)c).GetPromedio() < ((IAlumno)c2).GetPromedio();
         }
         public bool Mayor(Comparable c, Comparable c2)
         {
-            return ((Alumno)c).GetPromedio > ((Alumno)c2).GetPromedio;
+            return ((IAlumno)c).GetPromedio() > ((IAlumno)c2).GetPromedio();
         }
     }
 }

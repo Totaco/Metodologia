@@ -10,15 +10,15 @@ namespace Tp
 		
 		public bool Igual(Comparable c, Comparable c2)
         {
-        	return ((Alumno)c).GetDni == ((Alumno)c2).GetDni;
+        	return ((IAlumno)c).GetDni() == ((IAlumno)c2).GetDni();
         }
         public  bool Menor(Comparable c, Comparable c2)
         {
-            return ((Alumno)c).GetDni < ((Alumno)c2).GetDni;
+            return ((IAlumno)c).GetDni() < ((IAlumno)c2).GetDni();
         }
         public bool Mayor(Comparable c, Comparable c2)
         {
-            return ((Alumno)c).GetDni > ((Alumno)c2).GetDni;
+            return ((IAlumno)c).GetDni() > ((IAlumno)c2).GetDni();
         }
 	}
 }

@@ -10,11 +10,11 @@ namespace Tp
 		
 		public override Comparable CrearAleatorio()
 		{
-			return new Alumno(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(10),new PorDni());
+			return new Alumno(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(9)+1,generador.NumeroAleatorio(9)+1,new PorDni());
 		}
 		
 		public override Comparable CrearPorTeclado(){
-			return new Alumno(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),new PorDni());
+			return new Alumno(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),new PorDni());
 		}
 	}
 }

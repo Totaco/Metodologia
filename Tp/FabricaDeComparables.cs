@@ -7,9 +7,7 @@ namespace Tp
 	 	protected GeneradorDeDatosAleatorios generador = new GeneradorDeDatosAleatorios();
 	 	protected LectorDeDatos lector = new LectorDeDatos();
 	 	
-		public FabricaDeComparables()
-		{
-		}
+		public FabricaDeComparables(){}
 		
 		public static Comparable CrearAleatorio(int opcion){
 			FabricaDeComparables fabrica = null;
@@ -19,7 +17,11 @@ namespace Tp
 				case 2:
 					fabrica = new FabricaDeAlumnos(); break;
 				case 3:
+					fabrica = new FabricaDeAlumnosMuyEstudiosos(); break;
+				case 4:
 					fabrica = new FabricaDeProfesores(); break;
+				case 5:
+					fabrica = new StudentsFactory(); break;
 				default:
 					Console.WriteLine("Opcion incorrecta"); break;
 			}
@@ -34,7 +36,11 @@ namespace Tp
 				case 2:
 					fabrica = new FabricaDeAlumnos(); break;
 				case 3:
+					fabrica = new FabricaDeAlumnosMuyEstudiosos(); break;
+				case 4:
 					fabrica = new FabricaDeProfesores(); break;
+				case 5:
+					fabrica = new StudentsFactory(); break;
 				default:
 					Console.WriteLine("Opcion incorrecta"); break;
 			}

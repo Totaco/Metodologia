@@ -4,8 +4,8 @@ namespace Tp
 {
 	public interface Comparable
 	{
-		bool sosIgual(Comparable c);
-		bool sosMenor(Comparable c);
-		bool sosMayor(Comparable c);
+		bool SosIgual(Comparable c);
+		bool SosMenor(Comparable c);
+		bool SosMayor(Comparable c);
 	}
 }

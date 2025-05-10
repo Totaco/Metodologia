@@ -12,15 +12,15 @@ namespace Tp
 		public int getValor
 		{get{return valor;}}
 		
-		public bool sosIgual(Comparable c){
+		public bool SosIgual(Comparable c){
 			return ((Numero)c).getValor==valor;
 		}
 		
-		public bool sosMenor(Comparable c){
+		public bool SosMenor(Comparable c){
 			return ((Numero)c).getValor>valor;
 		}
 			
-		public bool	sosMayor(Comparable c){
+		public bool	SosMayor(Comparable c){
 			return ((Numero)c).getValor<valor;
 		}
 		

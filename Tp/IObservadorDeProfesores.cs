@@ -4,6 +4,6 @@ namespace Tp
 {
 	public interface IObservadorDeProfesores : IObservador
 	{
-		void actualizar(string accion);
+		void Actualizar(string accion);
 	}
 }

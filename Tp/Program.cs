@@ -10,17 +10,25 @@ namespace Tp
         
         static void Main(string[] args)
         {
-            /*Ejercicio 9
-            Pila p = new Pila();
-            Llenar(p,2);
-            Informar(p,2);*/
+            /*Ejercicio 4
+        	Teacher t = new Teacher();
+        	for(int i = 0; i < 10; i++){
+            	
+            	Comparable alumno = FabricaDeComparables.CrearAleatorio(2);
+            	t.goToClass(new AlumnoAdapter((Alumno)alumno));
+            	Comparable alumno_estudioso = FabricaDeComparables.CrearAleatorio(3);
+            	t.goToClass(new AlumnoAdapter((AlumnoMuyEstudioso)alumno_estudioso));
+        	}
+        	t.teachingAClass();*/
             
-            Profesor profesor = (Profesor)FabricaDeComparables.CrearAleatorio(3);
-            for (int i = 0; i < 20; i++){
-            	IObservador alumno = (IObservador)FabricaDeComparables.CrearAleatorio(2);
-            	profesor.agregarObservador(alumno);
-            }
-            dictadoDeClases(profesor);
+            //Ejercicio 8
+            Teacher t = new Teacher();
+            for(int i = 0; i < 20; i++){
+            	
+            	Comparable estudiante = FabricaDeComparables.CrearAleatorio(5);
+            	t.goToClass(new AlumnoAdapter((IAlumno)estudiante));
+        	}
+        	t.teachingAClass();
 
             Console.ReadKey(true);
         }
