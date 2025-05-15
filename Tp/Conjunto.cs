@@ -2,52 +2,52 @@
 
 namespace Tp
 {
-	public class Conjunto : Coleccionable, Iterable
+	public class Conjunto : IColeccionable, Iterable
 	{
-		private List<Comparable> lista;
+		private List<IComparable> lista;
 		
 		public Conjunto()
 		{
-			this.lista = new List<Comparable>();
+			this.lista = new List<IComparable>();
 		}
 		
-		public List<Comparable> GetLista{
-			get{return lista;}
+		public List<IComparable> GetLista(){
+			return lista;
 		}
 		
 		public int Cuantos(){
 			return lista.Count;
 		}
 		
-		public Comparable Minimo(){
-			Comparable min = lista[0];
-			foreach(Comparable c in lista){
+		public IComparable Minimo(){
+			IComparable min = lista[0];
+			foreach(IComparable c in lista){
 				if(c.SosMenor(min))
 					min=c;
 			}
 			return min;
 		}
 		
-		public Comparable Maximo(){
-			Comparable max = lista[0];
-			foreach(Comparable c in lista){
+		public IComparable Maximo(){
+			IComparable max = lista[0];
+			foreach(IComparable c in lista){
 				if(c.SosMayor(max))
 					max=c;
 			}
 			return max;
 		}
 		
-		public void Agregar(Comparable c){
+		public void Agregar(IComparable c){
 			if(!Pertenece(c))
 				lista.Add(c);
 		}
 		
-		public bool Contiene(Comparable c){
+		public bool Contiene(IComparable c){
 			return Pertenece(c);
 		}
 		
-		private bool Pertenece(Comparable c){
-			foreach(Comparable com in lista){
+		private bool Pertenece(IComparable c){
+			foreach(IComparable com in lista){
 				if(com.SosIgual(c))
 					return true;
 			}

@@ -2,21 +2,19 @@
 
 namespace Tp
 {
-	public class PorLegajo : EstrategiaComparacion
+	public class PorLegajo : IEstrategiaComparacion
 	{
-		public PorLegajo()
-		{
-		}
+		public PorLegajo(){}
 		
-		public bool Igual(Comparable c, Comparable c2)
+		public bool Igual(IComparable c, IComparable c2)
         {
         	return ((IAlumno)c).GetLegajo() == ((IAlumno)c2).GetLegajo();
         }
-        public  bool Menor(Comparable c, Comparable c2)
+        public  bool Menor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetLegajo() < ((IAlumno)c2).GetLegajo();
         }
-        public bool Mayor(Comparable c, Comparable c2)
+        public bool Mayor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetLegajo() > ((IAlumno)c2).GetLegajo();
         }

@@ -8,7 +8,7 @@ namespace Tp
 		
 		public AlumnoAdapter(IAlumno a)
 		{
-			alumno = a;
+			this.alumno = a;
 		}
 		
 		public string getName(){
@@ -28,15 +28,15 @@ namespace Tp
 		}
 		
 		public bool equals(Student student){
-			return (alumno.SosIgual(((Comparable)((AlumnoAdapter)student).alumno)));
+			return (alumno.SosIgual(((IComparable)((AlumnoAdapter)student).alumno)));
 		}
 		
 		public bool lessThan(Student student){
-			return (alumno.SosMenor(((Comparable)((AlumnoAdapter)student).alumno)));
+			return (alumno.SosMenor(((IComparable)((AlumnoAdapter)student).alumno)));
 		}
 		
 		public bool greaterThan(Student student){
-			return (alumno.SosMayor(((Comparable)((AlumnoAdapter)student).alumno)));
+			return (alumno.SosMayor(((IComparable)((AlumnoAdapter)student).alumno)));
 		}
 	}
 }

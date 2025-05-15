@@ -2,22 +2,19 @@
 
 namespace Tp
 {
-	public class PorPromedio : EstrategiaComparacion
+	public class PorPromedio : IEstrategiaComparacion
 	{
-		public PorPromedio()
-		{
-		}
+		public PorPromedio(){}
 		
-        //Metodos de Comparable - comparar personas
-        public bool Igual(Comparable c, Comparable c2)
+        public bool Igual(IComparable c, IComparable c2)
         {
         	return ((IAlumno)c).GetPromedio() == ((IAlumno)c2).GetPromedio();
         }
-        public  bool Menor(Comparable c, Comparable c2)
+        public  bool Menor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetPromedio() < ((IAlumno)c2).GetPromedio();
         }
-        public bool Mayor(Comparable c, Comparable c2)
+        public bool Mayor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetPromedio() > ((IAlumno)c2).GetPromedio();
         }

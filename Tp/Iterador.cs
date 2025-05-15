@@ -4,7 +4,7 @@ namespace Tp
 {
 	public interface Iterador
 	{
-		Comparable Actual();
+		IComparable Actual();
 		void Siguiente();
 		bool Fin();
 	}

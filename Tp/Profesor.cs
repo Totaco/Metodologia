@@ -10,7 +10,7 @@ namespace Tp
 		
 		public Profesor(string n,int d, int a) : base(n,d)
 		{
-			antiguedad=a;
+			this.antiguedad = a;
 		}
 		
 		public void hablarALaClase(){
@@ -27,15 +27,15 @@ namespace Tp
 			return antiguedad;
 		}
 		
-		public override bool SosIgual(Comparable c){
+		public override bool SosIgual(IComparable c){
 			return ((Profesor)c).GetAntiguedad() == GetAntiguedad();
 		}
 		
-		public override bool SosMenor(Comparable c){
+		public override bool SosMenor(IComparable c){
 			return ((Profesor)c).GetAntiguedad() > GetAntiguedad();
 		}
 		
-		public override bool SosMayor(Comparable c){
+		public override bool SosMayor(IComparable c){
 			return ((Profesor)c).GetAntiguedad() < GetAntiguedad();
 		}
 		

@@ -10,33 +10,31 @@ namespace Tp
         
         static void Main(string[] args)
         {
-            /*Ejercicio 4
-        	Teacher t = new Teacher();
-        	for(int i = 0; i < 10; i++){
+            //Ejercicio 2
+            /*Teacher t = new Teacher();
+            for(int i = 0; i < 20; i++){
             	
-            	Comparable alumno = FabricaDeComparables.CrearAleatorio(2);
-            	t.goToClass(new AlumnoAdapter((Alumno)alumno));
-            	Comparable alumno_estudioso = FabricaDeComparables.CrearAleatorio(3);
-            	t.goToClass(new AlumnoAdapter((AlumnoMuyEstudioso)alumno_estudioso));
+            	IComparable estudiante = FabricaDeComparables.CrearAleatorio(5);
+            	t.goToClass(new AlumnoAdapter((IAlumno)estudiante));
         	}
         	t.teachingAClass();*/
             
-            //Ejercicio 8
-            Teacher t = new Teacher();
-            for(int i = 0; i < 20; i++){
-            	
-            	Comparable estudiante = FabricaDeComparables.CrearAleatorio(5);
-            	t.goToClass(new AlumnoAdapter((IAlumno)estudiante));
-        	}
-        	t.teachingAClass();
+            //Ejercicio 10
+            Pila pila = new Pila();
+            Aula aula = new Aula();
+            pila.SetOrdenInicio(new OrdenInicio(aula));
+            pila.SetOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+            pila.SetOrdenAulaLlena(new OrdenAulaLlena(aula));
+            Llenar(pila, 2);
+            Llenar(pila, 3);
 
             Console.ReadKey(true);
         }
-        static void Llenar(Coleccionable c, int opcion)
+        static void Llenar(IColeccionable c, int opcion)
         {
             for (int i = 0; i < 20; i++)
             {
-            	Comparable com = FabricaDeComparables.CrearAleatorio(opcion);
+            	IComparable com = FabricaDeComparables.CrearAleatorio(opcion);
                 c.Agregar(com);
             }
         }
@@ -45,12 +43,12 @@ namespace Tp
         	return random.Next(min, max + 1);
         }
         
-        static void Informar(Coleccionable c, int opcion){
+        static void Informar(IColeccionable c, int opcion){
         	
         	Console.WriteLine("Cantidad de elementos: " + c.Cuantos());
         	Console.WriteLine("Minimo: " + c.Minimo().ToString());
         	Console.WriteLine("Maximo: " + c.Maximo().ToString());
-        	Comparable com = FabricaDeComparables.CrearPorTeclado(opcion);
+        	IComparable com = FabricaDeComparables.CrearPorTeclado(opcion);
         	if(c.Contiene(com)){
         		Console.WriteLine("El elemento leído está en la colección");
         	}
@@ -79,7 +77,7 @@ namespace Tp
         	}
         }
         
-        static void CambiarEstrategia(Iterable c, EstrategiaComparacion es){
+        static void CambiarEstrategia(Iterable c, IEstrategiaComparacion es){
         	IteradorDeLista ite = c.CrearIterador();
         	while(!ite.Fin()){
         		((Alumno)ite.Actual()).SetEstrategia(es);

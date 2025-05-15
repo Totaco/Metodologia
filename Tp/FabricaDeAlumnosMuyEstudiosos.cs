@@ -6,14 +6,14 @@ namespace Tp
 	{
 		public FabricaDeAlumnosMuyEstudiosos(){}
 		
-		public override Comparable CrearAleatorio()
+		public override IComparable CrearAleatorio()
 		{
-			return new AlumnoMuyEstudioso(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(9)+1,generador.NumeroAleatorio(9)+1,new PorDni());
+			return new AlumnoMuyEstudiosoProxy(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(9)+1,generador.NumeroAleatorio(9)+1);
 		}
 		
-		public override Comparable CrearPorTeclado()
+		public override IComparable CrearPorTeclado()
 		{
-			return new AlumnoMuyEstudioso(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),new PorDni());
+			return new AlumnoMuyEstudiosoProxy(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado());
 		}
 	}
 }

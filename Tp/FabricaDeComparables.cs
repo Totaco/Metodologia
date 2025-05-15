@@ -9,7 +9,7 @@ namespace Tp
 	 	
 		public FabricaDeComparables(){}
 		
-		public static Comparable CrearAleatorio(int opcion){
+		public static IComparable CrearAleatorio(int opcion){
 			FabricaDeComparables fabrica = null;
 			switch(opcion){
 				case 1:
@@ -28,7 +28,7 @@ namespace Tp
 			return fabrica.CrearAleatorio();
 		}
 		
-		public static Comparable CrearPorTeclado(int opcion){
+		public static IComparable CrearPorTeclado(int opcion){
 			FabricaDeComparables fabrica = null;
 			switch(opcion){
 				case 1:
@@ -47,7 +47,7 @@ namespace Tp
 			return fabrica.CrearPorTeclado();
 		}
 		
-		public abstract Comparable CrearAleatorio();
-		public abstract Comparable CrearPorTeclado();
+		public abstract IComparable CrearAleatorio();
+		public abstract IComparable CrearPorTeclado();
 	}
 }

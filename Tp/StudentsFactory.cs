@@ -6,9 +6,9 @@ namespace Tp
 	{
 		public StudentsFactory(){}
 		
-		public override Comparable CrearAleatorio()
+		public override IComparable CrearAleatorio()
 		{
-			IAlumno alumno = new Alumno(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(9)+1,generador.NumeroAleatorio(9)+1,new PorDni());
+			IAlumno alumno = new Alumno(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(99999),generador.NumeroAleatorio(9)+1,generador.NumeroAleatorio(9)+1);
             IAlumno alumnoDecorado = new DecoradorLegajo(alumno);
             alumnoDecorado = new DecoradorLetras(alumnoDecorado);
             alumnoDecorado = new DecoradorEstado(alumnoDecorado);
@@ -17,9 +17,9 @@ namespace Tp
             return alumnoDecorado;
 		}
 		
-		public override Comparable CrearPorTeclado()
+		public override IComparable CrearPorTeclado()
 		{
-			return new Alumno(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),new PorDni());
+			return new AlumnoProxy(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado());
 		}
 	}
 }

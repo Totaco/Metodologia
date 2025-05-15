@@ -2,15 +2,15 @@
 
 namespace Tp
 {
-	abstract public class Persona : Comparable
+	abstract public class Persona : IComparable
 	{
 		protected string nombre;
 		protected int dni;
 		
 		public Persona(string n,int d)
 		{
-			nombre=n;
-			dni=d;
+			this.nombre = n;
+			this.dni = d;
 		}
 		
 		public string GetNombre(){
@@ -21,10 +21,10 @@ namespace Tp
 			return dni;
 		}
 		
-		public abstract bool SosIgual(Comparable c);
+		public abstract bool SosIgual(IComparable c);
 		
-		public abstract bool SosMenor(Comparable c);
+		public abstract bool SosMenor(IComparable c);
 		
-		public abstract bool SosMayor(Comparable c);
+		public abstract bool SosMayor(IComparable c);
 	}
 }

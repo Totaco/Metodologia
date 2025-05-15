@@ -8,7 +8,7 @@ namespace Tp
 		
 		public DecoradorCalificacion(IAlumno a)
 		{
-			alumno = a;
+			this.alumno = a;
 		}
 		
 		public virtual string GetNombre() { return alumno.GetNombre(); }
@@ -20,13 +20,13 @@ namespace Tp
         public void PrestarAtencion() { alumno.PrestarAtencion(); }
         public void Distraerse() { alumno.Distraerse(); }
         public override string ToString() { return alumno.ToString(); }
-        public void SetEstrategia(EstrategiaComparacion es) { alumno.SetEstrategia(es); }
-        public EstrategiaComparacion GetEstrategia() { return alumno.GetEstrategia(); }
+        public void SetEstrategia(IEstrategiaComparacion es) { alumno.SetEstrategia(es); }
+        public IEstrategiaComparacion GetEstrategia() { return alumno.GetEstrategia(); }
         public void SetCalificacion(int c) { alumno.SetCalificacion(c); }
         public void Actualizar(string accion) { alumno.Actualizar(accion); }
         public abstract string MostrarCalificacion();
-        public bool SosIgual(Comparable c) { return alumno.SosIgual(c); }
-        public bool SosMenor(Comparable c) { return alumno.SosMenor(c); }
-        public bool SosMayor(Comparable c) { return alumno.SosMayor(c); }
+        public bool SosIgual(IComparable c) { return alumno.SosIgual(c); }
+        public bool SosMenor(IComparable c) { return alumno.SosMenor(c); }
+        public bool SosMayor(IComparable c) { return alumno.SosMayor(c); }
 	}
 }

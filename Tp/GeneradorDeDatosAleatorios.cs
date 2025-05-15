@@ -8,9 +8,7 @@ namespace Tp
 		private static Random aleatorio = new Random();
 		private const string caracteres = "abcdefghijklmnopqrstuvwxyz";
 		
-		public GeneradorDeDatosAleatorios()
-		{
-		}
+		public GeneradorDeDatosAleatorios(){}
 		
 		public int NumeroAleatorio(int max){
 			return aleatorio.Next(0,max);

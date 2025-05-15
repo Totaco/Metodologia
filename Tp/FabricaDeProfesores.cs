@@ -8,12 +8,12 @@ namespace Tp
 		{
 		}
 		
-		public override Comparable CrearAleatorio()
+		public override IComparable CrearAleatorio()
 		{
 			return new Profesor(generador.StringAleatorio(5),generador.NumeroAleatorio(99999999),generador.NumeroAleatorio(30));
 		}
 		
-		public override Comparable CrearPorTeclado()
+		public override IComparable CrearPorTeclado()
 		{
 			return new Profesor(lector.StringPorTeclado(),lector.NumeroPorTeclado(),lector.NumeroPorTeclado());
 		}

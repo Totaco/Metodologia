@@ -4,9 +4,7 @@ namespace Tp
 {
 	public class LectorDeDatos
 	{
-		public LectorDeDatos()
-		{
-		}
+		public LectorDeDatos(){}
 		
 		public int NumeroPorTeclado(){
 			Console.Write("Ingrese un numero: ");

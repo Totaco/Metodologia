@@ -7,14 +7,14 @@ namespace Tp
 		private int legajo;
 		private double promedio;
 		private int calificacion;
-		private EstrategiaComparacion estrategia;
+		private IEstrategiaComparacion estrategia;
 		
-		public Alumno(string n, int d, int l, double p, int c, EstrategiaComparacion e) : base(n,d)
+		public Alumno(string n, int d, int l, double p, int c) : base(n,d)
 		{
-			legajo=l;
-			promedio=p;
-			calificacion=c;
-			estrategia=e;
+			this.legajo = l;
+			this.promedio = p;
+			this.calificacion = c;
+			this.estrategia = new PorDni();
 		}
 		
 		public void SetCalificacion(int c){
@@ -37,23 +37,23 @@ namespace Tp
 			return "Alumno " + GetNombre() + ", Dni " + GetDni() + ", Legajo " + GetLegajo() + ", Promedio " + GetPromedio();
 		}
 		
-		public override bool SosIgual(Comparable c){
+		public override bool SosIgual(IComparable c){
 			return estrategia.Igual(this,c);
 		}
 		
-		public override bool SosMenor(Comparable c){
+		public override bool SosMenor(IComparable c){
 			return estrategia.Menor(this,c);
 		}
 		
-		public override bool SosMayor(Comparable c){
+		public override bool SosMayor(IComparable c){
 			return estrategia.Mayor(this,c);
 		}
 		
-		public void SetEstrategia(EstrategiaComparacion es){
+		public void SetEstrategia(IEstrategiaComparacion es){
 			estrategia = es;
 		}
 		
-		public EstrategiaComparacion GetEstrategia(){
+		public IEstrategiaComparacion GetEstrategia(){
 			return estrategia;
 		}
 		
@@ -89,7 +89,7 @@ namespace Tp
 		}
 		
 		public string MostrarCalificacion(){
-			return this.GetNombre() + " " + GetCalificacion();
+			return GetNombre() + " " + GetCalificacion();
 		}
 	}
 }

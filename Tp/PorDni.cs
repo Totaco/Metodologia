@@ -2,21 +2,19 @@
 
 namespace Tp
 {
-	public class PorDni : EstrategiaComparacion
+	public class PorDni : IEstrategiaComparacion
 	{
-		public PorDni()
-		{
-		}
+		public PorDni(){}
 		
-		public bool Igual(Comparable c, Comparable c2)
+		public bool Igual(IComparable c, IComparable c2)
         {
         	return ((IAlumno)c).GetDni() == ((IAlumno)c2).GetDni();
         }
-        public  bool Menor(Comparable c, Comparable c2)
+        public  bool Menor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetDni() < ((IAlumno)c2).GetDni();
         }
-        public bool Mayor(Comparable c, Comparable c2)
+        public bool Mayor(IComparable c, IComparable c2)
         {
             return ((IAlumno)c).GetDni() > ((IAlumno)c2).GetDni();
         }

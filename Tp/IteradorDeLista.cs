@@ -4,16 +4,16 @@ namespace Tp
 {
 	public class IteradorDeLista : Iterador
 	{
-		private List<Comparable> lista;
+		private List<IComparable> lista;
 		private int indice;
 		
-		public IteradorDeLista(List<Comparable> cl)
+		public IteradorDeLista(List<IComparable> cl)
 		{
-			lista=cl;
-			indice=0;
+			this.lista=cl;
+			this.indice=0;
 		}
 		
-		public Comparable Actual(){
+		public IComparable Actual(){
 			return lista[indice];
 		}
 		

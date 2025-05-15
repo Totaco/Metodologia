@@ -2,7 +2,7 @@
 
 namespace Tp
 {
-	public interface IAlumno : IObservadorDeProfesores, Comparable
+	public interface IAlumno : IObservadorDeProfesores, IComparable
 	{
 		string GetNombre();
         int GetLegajo();
@@ -13,8 +13,8 @@ namespace Tp
         void PrestarAtencion();
         void Distraerse();
         string ToString();
-        void SetEstrategia(EstrategiaComparacion es);
-        EstrategiaComparacion GetEstrategia();
+        void SetEstrategia(IEstrategiaComparacion es);
+        IEstrategiaComparacion GetEstrategia();
         void SetCalificacion(int c);
         string MostrarCalificacion();
 		
